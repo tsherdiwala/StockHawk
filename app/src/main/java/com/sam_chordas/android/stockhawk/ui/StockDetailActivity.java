@@ -8,6 +8,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
 
 import com.db.chart.Tools;
@@ -31,6 +32,7 @@ public class StockDetailActivity extends AppCompatActivity
 
     private String mStockSymbol;
     private LineChartView mChartView;
+    private Toolbar mToolbar;
 
 
     @Override
@@ -38,6 +40,8 @@ public class StockDetailActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line_graph);
         init();
+
+        setSupportActionBar(mToolbar);
 
         mStockSymbol = getIntent().getStringExtra(EXTRA_STOCK_SYMBOL);
         setTitle(mStockSymbol);
@@ -49,6 +53,7 @@ public class StockDetailActivity extends AppCompatActivity
 
     private void init() {
         mChartView = (LineChartView) findViewById(R.id.linechart);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
     @Override

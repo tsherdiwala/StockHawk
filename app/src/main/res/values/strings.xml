@@ -17,4 +17,7 @@
   <string name="placeholder_bid_price" translatable="false">1000.00</string>
   <string name="placeholder_change" translatable="false">100%</string>
 
+
+  <string name="existing_stock_toast">This stock is already saved!</string>
+
 </resources>
